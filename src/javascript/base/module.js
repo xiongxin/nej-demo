@@ -14,6 +14,13 @@ NEJ.define([
         // magic
     };
 
+    //显示加载
+    _pro.__onLoadingShow = function(_event){
+        _event.value = '<p class="w-loading">&nbsp;</p>';
+    };
+
+    _p._$regist = _t._$regist;
+
     return _p;
 
 });
