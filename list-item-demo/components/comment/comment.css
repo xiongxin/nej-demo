@@ -1,0 +1,8 @@
+#comments {border: 1px solid #e5e5e1;padding: 10px;overflow: hidden;margin: 20px auto;width: 960px;background: azure;}
+.m-cmt {clear: both;overflow: hidden;margin-bottom: 10px;border-bottom: 1px dashed #e2e2e2;padding-bottom: 10px;}
+.m-cmt .fce {float: left;margin-right: 10px;}
+.m-cmt .fce img {width: 40px;height: 40px;}
+.m-cmt .box {float: left; }
+.m-cmt .box .cnt {margin: 10px 0;}
+.replies {margin-top: 10px;margin-left: 100px;}
+#comments textarea{width: 760px;height: 100px;}

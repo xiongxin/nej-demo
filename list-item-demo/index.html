@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论列表演示</title>
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+<div id="comments">
+    <!--输出评论列表-->
+</div>
+<script src="../nej/src/define.js?pro=./components/"></script>
+<script>
+    define([
+    	 'util/template/tpl',
+    	 '{pro}/comment/comment.js'
+    ],function (_t, _c) {
+    	var data = [
+    		{id: 1, username: 'user001', content: 'content001', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg", replies: [
+    				{id: 2, username: 'user002', content: 'content002', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg"},
+				{id: 4, username: 'user004', content: 'content004', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg"}
+			]
+    		},{id: 3, username: 'user003', content: 'content003', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg",
+				replies: [
+    			]
+    		},{id: 5, username: 'user005', content: 'content005', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg", replies: [
+    				{id: 6, username: 'user006', content: 'content006', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg"}
+    			]
+    		},{id: 7, username: 'user007', content: 'content007', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg", replies: [
+    				{id: 8, username: 'user008', content: 'content008', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg"}
+    			]
+    		},{id: 9, username: 'user009', content: 'content009', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg", replies: [
+    				{id: 10, username: 'user010', content: 'content010', face: "http://imgsize.ph.126.net/?imgurl=http://img1.ph.126.net/ECrArhAEDkahQD1hEJXzdg==/6598286926088098387.jpg_64x64x0.jpg"}
+    			]
+    		},
+    	];
+    	var _list = _t._$getItemTemplate(
+        	data,_c._$$CommentItem,{
+	            parent:'comments',
+				onreplay: function (_data) {
+					console.log(_data);
+				},
+				ondelete: function (_data) {
+					console.log(_data);
+				}
+			}
+	    );
+    });
+</script>
+</body>
+</html> 
