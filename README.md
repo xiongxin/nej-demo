@@ -1,4 +1,4 @@
 # NEJ dispatcher
-NEJ [模块调度系统](https://github.com/zjzhome/NEJ-dispatcher)
+该分支完成blog功能
 
-NEJ ITEM控件 在目录 list-item-demo
+另外一个分支完成setting功能

@@ -17,40 +17,16 @@ NEJ.define([
         rules: {
             rewrite : {
                 '404': '/m/blog/list',
-                '/m/blog/list': '/m/blog',  //  /m/blog跳转至/m/blog/list
-                '/m/blog': '/m',  //  /m/blog跳转至/m/blog/list
+                '/m/blog/list': '/m/blog', 
             },
             title: {
-                '/m/blog/list': '博客列表',
-                '/m/blog/tag': '博客标签',
-                '/m/article': '文章管理',
-                '/m/blog/setting': '设置我的博客'
             },
             //  模块 对应 umi
             alias: {
-                'm': '/m',
-                'tab': '/?/tab',
-                'blog': '/m/blog',
-                'blog-list': '/m/blog/list',
-                'blog-tag': '/m/blog/tag',
-                'article': '/m/article',
-                'blog-setting': '/m/blog/setting'
             }
         },
         // UMI 映射到一个模块实现文件
         modules: {
-            '/?/tab': 'tab/index.html',
-            '/m': {
-                module: 'm/index.html',
-                composite: {
-                    tab: '/?/tab'
-                }
-            },
-            '/m/blog': 'blog/index.html',
-            '/m/blog/setting': 'blog/setting/index.html',
-            '/m/blog/list': 'blog/list/index.html',
-            '/m/blog/tag': 'blog/tag/index.html',
-            '/m/article': 'article/index.html'
         }
     });
 

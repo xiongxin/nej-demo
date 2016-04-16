@@ -4,23 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>NEJ dispatcher</title>
-    <link rel="stylesheet" type="text/css" href="/src/css/bootstrap.css">
-    <style type="text/css">
-    textarea[data-src] { display: none; }
+    <link rel="stylesheet" type="text/css" href="../src/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../src/css/template.css">
+    <style>
+        .a{_background:url(../src/res/image/loading.gif) no-repeat center center;}
+        textarea{display: none;}
     </style>
+
 </head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <a class=navbar-brand href="/">DEMO</a>
-        </div>
-    </nav>
-    
-    <div id="template-box" style="display:none;"></div>
-    <div class="container">
-        <div class="row" id="module-box">
+<body id="www-wd-com">
+<img src="../src/res/image/loading.gif" alt="" class="test" style="display:none">
+<!-- @nocompress -->
+<div class="g-doc">
+    <div class="g-hd">
+        <h1 class="m-logo">网易-杭研院-前端技术组-实例库</h1>
+        <h2 class="m-title">NEJ Module Sample</h2>
+    </div>
+    <div class="g-bd" id="module-box"></div>
+    <div class="g-bd">
+        <div class="m-foot">
+            如有任何问题，请联系：蔡剑飞(<a href="mailto:caijf@corp.netease.com">caijf@corp.netease.com</a>)
         </div>
     </div>
+    <div class="g-ft">
+        <div class="m-foot">
+            &nbsp;&copy;&nbsp;网易-杭研院-前端技术组
+        </div>
+    </div>
+</div>
 
     <!-- @MODULE -->
     <textarea name="html" data-src="/src/html/m/index.html"></textarea>
@@ -32,9 +43,9 @@
     <!-- /@MODULE -->
     
     <!-- @VERSION -->
-    <script>location.config={root:'/src/html/'};</script>
+    <script>location.config={root:'../src/html/'};</script>
     <!-- @DEFINE -->
-    <script type="text/javascript" src="/nej/src/define.js?p=wk|td-1&pro=/src/javascript/"></script>
-    <script type="text/javascript" src="/src/javascript/app.js"></script>
+    <script type="text/javascript" src="../nej/src/define.js?p=wk|td-1&pro=../src/javascript/"></script>
+    <script type="text/javascript" src="../src/javascript/app.js"></script>
 </body>
 </html>
