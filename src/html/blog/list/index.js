@@ -22,19 +22,15 @@ NEJ.define([
         this.__body = _e._$html2node(
             _l._$getTextTemplate('module-id-l2')
         );
-        // 0 - box select
-        // 1 - class list box
-        // 2 - tag list box
-        // 3 - sub module box
+        // 0 - tab box
+        // 1 - module box
         var _list = _e._$getByClassName(this.__body,'j-flag');
         this.__export = {
             box:_list[0],
-            clazz:_list[1],
-            tag:_list[2],
+            cate:_list[1],
             list:_list[3],
             parent:_list[3]
         };
-
     };
     // 注册
     _m._$regist(

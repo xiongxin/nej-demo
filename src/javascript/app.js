@@ -24,14 +24,10 @@ NEJ.define([
             alias: {
                 //首页 私有模块 一般是菜单
                 "m-tab":"/?/tab/",
-
-                //为 umi blog/list blog/tag 提供的菜单
                 "m-blog-tab": "/?/blog/tab/",
-                //博客列表私有模块
-                "blog-list-box":"/?/blog/list/box/",
-                "blog-list-tag":"/?/blog/list/tag/",
-                "blog-list":"/?/blog/list/",
-                
+                "m-blog-list-box":"/?/blog/list/box/",
+                "m-blog-list-cate": "/?/blog/list/cate/",
+                "m-blog-list-list": "/?/blog/list/list/",
                 
                 //公开模块url可以访问
                 // 模块名 ： UMI
@@ -48,10 +44,9 @@ NEJ.define([
             "/?/tab/":"tab/index.html",
             "/?/blog/tab/": "blog/tab/index.html",
             //博客列表私有模块
-            "/?/blog/box/" : 'blog/list/box/index.html',
-            "/?/blog/tag/" : 'blog/list/tag/index.html',
-            "/?/blog/list/" : 'blog/list/list/index.html',
-
+            "/?/blog/list/box/" : 'blog/list/box/index.html',
+            "/?/blog/list/cate/" : "blog/list/cate/index.html",
+            "/?/blog/list/list/" : "blog/list/list/index.html",
             //不带 /结束的可以访问，但是不是给用户看到页面
             "/m":{
                 "module":"m/index.html",
@@ -70,9 +65,9 @@ NEJ.define([
                 "module":"blog/list/index.html",
                 'composite': {
                     //注入私有模块
-                    "box" : "/?/blog/box/",
-                    "tag" : "/?/blog/tag/",
-                    "list" : "/?/blog/list/"
+                    "box" : "/?/blog/list/box/",
+                    "cate": "/?/blog/list/cate/",
+                    "list": "/?/blog/list/list/",
                 }
             },
             
@@ -81,5 +76,4 @@ NEJ.define([
             }
         }
     });
-
 });

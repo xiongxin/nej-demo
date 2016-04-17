@@ -1,0 +1,13 @@
+<meta charset="utf-8"/>
+<textarea name="txt" id="module-id-cate">
+  <div class="w-blk">
+    <h4 class="ytl">按类别查看</h4>
+    <div class="ybx j-flag"></div>
+  </div>
+</textarea>
+<textarea name="jst" id="jst-4-tag-list">
+  {list xlist as x}
+    <a class="yit j-list" href="#/blog/?cid=${x.id}" data-id="${x.id}">${x.name}(${x.count})</a>
+  {/list}
+</textarea>
+<textarea name="js"  data-src="./index.js"></textarea>
