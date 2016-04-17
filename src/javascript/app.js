@@ -13,16 +13,26 @@ NEJ.define([
     _p._$startup({
         rules: {
             rewrite : {
-                '404': '/m/blog/list/',
-                "/m/blog/list/":"/m/blog/"
+                '404': '/m/blog/list/', //首页
+                "/m/blog/list/":"/m/blog/" ,//菜单项
             },
             title: {
+                "/m/blog/tag/":"日志标签",
+                "/m/blog/list/":"日志列表",
             },
             //  模块注册名 对应 umi
             alias: {
-                //私有模块
+                //首页 私有模块 一般是菜单
                 "m-tab":"/?/tab/",
+
+                //为 umi blog/list blog/tag 提供的菜单
                 "m-blog-tab": "/?/blog/tab/",
+                //博客列表私有模块
+                "blog-list-box":"/?/blog/list/box/",
+                "blog-list-tag":"/?/blog/list/tag/",
+                "blog-list":"/?/blog/list/",
+                
+                
                 //公开模块url可以访问
                 // 模块名 ： UMI
                 "m":"/m",
@@ -37,7 +47,12 @@ NEJ.define([
             //私有模块
             "/?/tab/":"tab/index.html",
             "/?/blog/tab/": "blog/tab/index.html",
+            //博客列表私有模块
+            "/?/blog/box/" : 'blog/list/box/index.html',
+            "/?/blog/tag/" : 'blog/list/tag/index.html',
+            "/?/blog/list/" : 'blog/list/list/index.html',
 
+            //不带 /结束的可以访问，但是不是给用户看到页面
             "/m":{
                 "module":"m/index.html",
                 "composite":{
@@ -50,8 +65,15 @@ NEJ.define([
                    "tab":"/?/blog/tab/"
                 }
             },
+            //用户访问到的页面
             "/m/blog/list/": {
                 "module":"blog/list/index.html",
+                'composite': {
+                    //注入私有模块
+                    "box" : "/?/blog/box/",
+                    "tag" : "/?/blog/tag/",
+                    "list" : "/?/blog/list/"
+                }
             },
             
             "/m/blog/tag/": {

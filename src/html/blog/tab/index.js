@@ -40,7 +40,6 @@ define([
      */
     _pro.__onRefresh = function(_options){
         this.__super(_options);
-        console.log(this.__doParseUMIFromOpt(_options))
         this.__tbview._$match(
             this.__doParseUMIFromOpt(_options)
         );

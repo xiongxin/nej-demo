@@ -1,4 +1,4 @@
-
+//模块基类
 NEJ.define([
     '{lib}base/klass.js',
     '{lib}util/dispatcher/module.js'
@@ -8,15 +8,6 @@ NEJ.define([
 
     _p._$$Module = _k._$klass();
     _pro = _p._$$Module._$extend(_t._$$ModuleAbstract);
-
-    _pro.__init = function () {
-        this.__super();
-    };
-
-    _pro.__onShow = function(options) {
-        this.__super(options);
-        // magic
-    };
 
     
     /**
