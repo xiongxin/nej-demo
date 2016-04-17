@@ -11,22 +11,52 @@ NEJ.define([
     // 源码中你会看到, _$startup方法设置了window.dispatcher.
     // 可直接dispatcher._$redirect('umi or alias')进行模块的跳转.
     _p._$startup({
-        // 设置规则
-        // 这个rewrite比较坑爹, 404是指如果访问了不存在的模块就跳转到/m/blog模块, 
-        // 但是其他的规则是反的, 比如404下面的, 访问/m模块会直接跳转到/m/blog模块.
         rules: {
             rewrite : {
-                '404': '/m/blog/list',
-                '/m/blog/list': '/m/blog', 
+                '404': '/m/blog/list/',
+                "/m/blog/list/":"/m/blog/"
             },
             title: {
             },
-            //  模块 对应 umi
+            //  模块注册名 对应 umi
             alias: {
+                //私有模块
+                "m-tab":"/?/tab/",
+                "m-blog-tab": "/?/blog/tab/",
+                //公开模块url可以访问
+                // 模块名 ： UMI
+                "m":"/m",
+                "m-blog": '/m/blog',
+                "m-blog-list": '/m/blog/list/',
+                "m-blog-tag": '/m/blog/tag/',
+
             }
         },
-        // UMI 映射到一个模块实现文件
+        // UMI 对应 模块实现文件
         modules: {
+            //私有模块
+            "/?/tab/":"tab/index.html",
+            "/?/blog/tab/": "blog/tab/index.html",
+
+            "/m":{
+                "module":"m/index.html",
+                "composite":{
+                  "tab":"/?/tab/"
+                }
+            },
+            "/m/blog": {
+                "module":"blog/index.html",
+                "composite": {
+                   "tab":"/?/blog/tab/"
+                }
+            },
+            "/m/blog/list/": {
+                "module":"blog/list/index.html",
+            },
+            
+            "/m/blog/tag/": {
+                "module":"blog/tag/index.html",
+            }
         }
     });
 
