@@ -19,11 +19,11 @@ NEJ.define([
         var _key = _options.key,
             _callback = _options.onload;
 
-        _j._$request('http://localhost:63342/api/blog/list.json', {
-            method: 'POST',
+        _j._$request('http://localhost:63342/nej-demo/api/blog/list.json', {
+            method: 'GET',
             type: 'json',
             data:_u._$object2query(_options.data),
-            onload:this.__cbListLoad._$bind(this,_key,_callback),
+            onload:this.__cbListLoad._$bind(this,_key,_callback,_options.offset, _options.limit),
             onerror:this.__cbListLoad._$bind(this,_key,_callback,{})
         })
 

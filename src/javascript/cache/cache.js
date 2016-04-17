@@ -14,19 +14,16 @@ NEJ.define([
      */
     _p._$$Cache = _k._$klass();
     _pro = _p._$$Cache._$extend(_d._$$CacheListAbstract);
-    /**
-     * 服务器数据返回回调
-     * @param {Object} _callback
-     * @param {Object} _json
-     */
-    _pro.__cbListLoad = function(_key,_callback,_json){
+
+
+    _pro.__cbListLoad = function(_key,_callback,_offset, _limit,_json){
         var _list = null;
-        if (_json.code==1){
-            var _result = _json.result;
-            if (_result.total>_result.list.length)
-                this._$setTotal(_key,_result.total);
-            _list = _result.list;
-        }
+        var _result = _json;
+        _result.total = _json.length;
+        _result.list = _json.slice(_offset,_offset+_limit);
+        if (_result.total>_result.list.length)
+            this._$setTotal(_key,_result.total);
+        _list = _result.list;
         _callback(_list);
     };
 });
