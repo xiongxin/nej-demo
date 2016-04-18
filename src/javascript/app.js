@@ -15,6 +15,7 @@ NEJ.define([
             rewrite : {
                 '404': '/m/blog/list/', //首页
                 "/m/blog/list/":"/m/blog/" ,//菜单项
+                "/m/setting/account/" : "/m/setting/" ,//菜单项
             },
             title: {
                 "/m/blog/tag/":"日志标签",
@@ -38,9 +39,12 @@ NEJ.define([
                 
                 //帐号设置页面
                 "m-setting-tab": "/?/setting/tab/",
-
-                "m-setting": "/m/setting"
-
+                'm-setting-account-tab':"/?/setting/account/tab/",
+                "m-setting": "/m/setting",
+                "m-setting-account": "/m/setting/account",
+                "m-setting-account-profile": "/m/setting/account/",
+                "m-setting-account-edu":"/m/setting/account/edu/"
+                
             }
         },
         // UMI 对应 模块实现文件
@@ -54,6 +58,7 @@ NEJ.define([
             "/?/blog/list/list/" : "blog/list/list/index.html",
             //博客设置私有模块
             "/?/setting/tab/" : "setting/tab/index.html",
+            "/?/setting/account/tab/": 'setting/account/tab/index.html',
             //不带 /结束的可以访问，但是不是给用户看到页面
             "/m":{
                 "module":"m/index.html",
@@ -86,6 +91,15 @@ NEJ.define([
                     "tab":"/?/setting/tab/"
                 }
             },
+            
+            "/m/setting/account" : {
+                "module":"setting/account/index.html",
+                "composite":{
+                    "tab":"/?/setting/account/tab/"
+                }
+            },
+            "/m/setting/account/":"setting/account/profile/index.html",
+            "/m/setting/account/edu/":"setting/account/edu/index.html",
         },
         onbeforechange:function(_options){
             var _umi = _options.path||'';
