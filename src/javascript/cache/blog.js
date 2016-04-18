@@ -17,7 +17,7 @@ NEJ.define([
 
     _pro.__doLoadList = function (_options) {
         var _key = _options.key,  //唯一标识符，用于加载不同的数据
-            _callback = _options.onload;console.log(_key);
+            _callback = _options.onload;
         _j._$request('http://localhost:63342/nej-demo/api/blog/list.json', {
             method: 'POST',
             type: 'json',

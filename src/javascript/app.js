@@ -34,7 +34,12 @@ NEJ.define([
                 "m":"/m",
                 "m-blog": '/m/blog',
                 "m-blog-list": '/m/blog/list/',
-                "m-blog-tag": '/m/blog/tag/'
+                "m-blog-tag": '/m/blog/tag/',
+                
+                //帐号设置页面
+                "m-setting-tab": "/?/setting/tab/",
+
+                "m-setting": "/m/setting"
 
             }
         },
@@ -47,6 +52,8 @@ NEJ.define([
             "/?/blog/list/box/" : 'blog/list/box/index.html',
             "/?/blog/list/cate/" : "blog/list/cate/index.html",
             "/?/blog/list/list/" : "blog/list/list/index.html",
+            //博客设置私有模块
+            "/?/setting/tab/" : "setting/tab/index.html",
             //不带 /结束的可以访问，但是不是给用户看到页面
             "/m":{
                 "module":"m/index.html",
@@ -70,7 +77,15 @@ NEJ.define([
                     "list": "/?/blog/list/list/"
                 }
             },
-            "/m/blog/tag/": "blog/tag/index.html"
+            "/m/blog/tag/": "blog/tag/index.html",
+            
+            //帐号设置模块
+            "/m/setting" : {
+                'module':'setting/index.html',
+                "composite":{
+                    "tab":"/?/setting/tab/"
+                }
+            },
         },
         onbeforechange:function(_options){
             var _umi = _options.path||'';
