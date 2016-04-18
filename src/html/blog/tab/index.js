@@ -18,8 +18,8 @@ define([
      * @extends {nej.ut._$$AbstractModuleTagList}
      * @param   {Object}  可选配置参数，已处理参数列表如下所示
      */
-    _p._$$ModuleBlogTagTab = _k._$klass();
-    _pro = _p._$$ModuleBlogTagTab._$extend(_m._$$Module);
+    _p._$$BlogTag = _k._$klass();
+    _pro = _p._$$BlogTag._$extend(_m._$$Module);
     /**
      * 构建模块
      * @return {Void}
@@ -47,6 +47,6 @@ define([
     // notify dispatcher
     _m._$regist(
         'm-blog-tab',
-        _p._$$ModuleBlogTagTab
+        _p._$$BlogTag
     );
 });

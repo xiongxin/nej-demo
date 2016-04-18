@@ -16,14 +16,15 @@ NEJ.define([
     _pro = _p._$$CacheBlog._$extend(_d._$$Cache);
 
     _pro.__doLoadList = function (_options) {
-        var _key = _options.key,
-            _callback = _options.onload;
-
+        var _key = _options.key,  //唯一标识符，用于加载不同的数据
+            _callback = _options.onload;console.log(_key);
         _j._$request('http://localhost:63342/nej-demo/api/blog/list.json', {
-            method: 'GET',
+            method: 'POST',
             type: 'json',
-            data:_u._$object2query(_options.data),
-            onload:this.__cbListLoad._$bind(this,_key,_callback,_options.offset, _options.limit),
+            data:_options.data,
+            onload: function (_data) {
+                _callback(_data);
+            },
             onerror:this.__cbListLoad._$bind(this,_key,_callback,{})
         })
 
@@ -41,6 +42,22 @@ NEJ.define([
         for(var i=0;i<10;i++){
             _seed++;
             _arr.push({id:_seed,name:'class-'+_seed,count:_nmb++});
+        }
+        return _arr;
+    };
+
+    /**
+     * 从缓存中取日志标签列表
+     * @return {Array} 日志标签列表
+     */
+    _pro._$getTagListInCache = function(){
+        // for test
+        var _arr = [],
+            _nmb = 0,
+            _seed = +new Date;
+        for(var i=0;i<20;i++){
+            _seed++;
+            _arr.push({id:_seed,name:'tag-'+_seed,count:_nmb++});
         }
         return _arr;
     };

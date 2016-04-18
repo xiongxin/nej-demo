@@ -48,7 +48,8 @@ NEJ.define([
         return function(_options){
             this.__super(_options);
             if (this.__lmdl) this.__lmdl._$recycle();
-            this.__mopt.cache.lkey = _doParseCKey(_options.param||_o);
+            this.__mopt.cache.key = _doParseCKey(_options.param||_o);
+            this.__mopt.cache.data = _options.param;
             this.__lmdl = _t._$$ListModulePG._$allocate(this.__mopt);
         };
     })();

@@ -34,7 +34,7 @@ NEJ.define([
                 "m":"/m",
                 "m-blog": '/m/blog',
                 "m-blog-list": '/m/blog/list/',
-                "m-blog-tag": '/m/blog/tag/',
+                "m-blog-tag": '/m/blog/tag/'
 
             }
         },
@@ -67,13 +67,18 @@ NEJ.define([
                     //注入私有模块
                     "box" : "/?/blog/list/box/",
                     "cate": "/?/blog/list/cate/",
-                    "list": "/?/blog/list/list/",
+                    "list": "/?/blog/list/list/"
                 }
             },
-            
-            "/m/blog/tag/": {
-                "module":"blog/tag/index.html",
-            }
+            "/m/blog/tag/": "blog/tag/index.html"
+        },
+        onbeforechange:function(_options){
+            var _umi = _options.path||'';
+            if (!!_umi&&
+                _umi.indexOf('/?')<0&&
+                _umi.indexOf('/m')<0)
+                _options.path = '/m'+_umi;  //自动补充  /m/ 路径
         }
     });
+
 });

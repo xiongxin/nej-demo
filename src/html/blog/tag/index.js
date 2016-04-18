@@ -9,16 +9,18 @@ NEJ.define([
     'base/klass',
     'base/element',
     'util/template/tpl',
-    'pro/base/module'
-], function(_k,_e,_l,_m,_p,_pro){
+    'util/template/jst',
+    'pro/base/module',
+    'pro/cache/blog'
+], function(_k,_e,_l,_j,_m, _b,_p,_pro){
     /**
      * 项目模块基类对象
      * @class   {wd.m._$$ModuleLayoutBlog}
      * @extends {nej.ut._$$AbstractModuleLayoutBlog}
      * @param   {Object}  可选配置参数，已处理参数列表如下所示
      */
-    _p._$$ModuleLayoutBlog = _k._$klass();
-    _pro = _p._$$ModuleLayoutBlog._$extend(_m._$$Module);
+    _p._$$BlogTag = _k._$klass();
+    _pro = _p._$$BlogTag._$extend(_m._$$Module);
     /**
      * 构建模块
      * @return {Void}
@@ -27,11 +29,14 @@ NEJ.define([
         this.__body = _e._$html2node(
             _l._$getTextTemplate('module-id-4')
         );
+        var _list = _e._$getByClassName(this.__body, 'j-flag');
+        _j._$render(_list[0],'blog-tag-tpl',
+            {xlist: _b._$$CacheBlog._$allocate()._$getTagListInCache()});
 
     };
     // notify dispatcher
     _m._$regist(
         'm-blog-tag',
-        _p._$$ModuleLayoutBlog
+        _p._$$BlogTag
     );
 });
